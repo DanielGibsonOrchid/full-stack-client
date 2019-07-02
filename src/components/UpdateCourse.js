@@ -26,7 +26,7 @@ class UpdateCourse extends Component {
 
     axios ({
       method: 'put',
-      url: `http://localhost:5000/api/courses/${id}`,
+      url: `https://rest-api-project-9.herokuapp.com/api/courses/${id}`,
       auth: {
         username: window.localStorage.getItem('EmailAddress'),
         password: window.localStorage.getItem('Password')
@@ -65,7 +65,7 @@ class UpdateCourse extends Component {
 
     const id =  this.props.match.params.id;
 
-    axios.get(`http://localhost:5000/api/courses/${id}`)
+    axios.get(`https://rest-api-project-9.herokuapp.com/api/courses/${id}`)
       .then(res => {
         const course = res.data;
 

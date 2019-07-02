@@ -17,7 +17,7 @@ class Courses extends Component {
 
     /* Fetch the list of courses from the API using axios */    
     axios
-      .get('http://localhost:5000/api/courses/')
+      .get('https://rest-api-project-9.herokuapp.com/api/courses/')
       .then(res => {
         this.setState({
           courses: res.data
