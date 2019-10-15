@@ -207,7 +207,7 @@ body {
 
 /* line 13, ../sass/global.sass */
 .header {
-  background: #57496e;
+  background: #3b5998;
   padding: 20px 0;
   margin-bottom: 30px;
 }
@@ -243,6 +243,7 @@ body {
   float: right;
   margin-top: 3px;
   padding-right: 10px;
+  padding-right: 60px;
 }
 /* line 37, ../sass/global.sass */
 .header nav a {
@@ -283,7 +284,7 @@ h1 {
 
 /* line 61, ../sass/global.sass */
 a {
-  color: #7c689b;
+  color: #3b5998;
   cursor: pointer;
   text-decoration: none;
   -webkit-transition: color 0.2s;
@@ -340,7 +341,7 @@ p {
 
 /* line 102, ../sass/global.sass */
 .course--module {
-  background: #7c689b;
+  background: #4267b2;
   border-radius: 8px;
   padding: 30px;
   margin-bottom: 30px;
@@ -348,6 +349,11 @@ p {
   display: block;
   position: relative;
   box-sizing: border-box;
+  transition: 0.1s;
+}
+
+.course--module:hover {
+  background: #577eca;
 }
 /* line 2, ../sass/mixins.sass */
 .course--module:before, .course--module:after {
@@ -393,6 +399,9 @@ p {
 /* line 137, ../sass/global.sass */
 .course--add--module:hover .course--add--title {
   color: #444;
+}
+.bounds .course--add--module:hover {
+  background-color: #eee;
 }
 /* line 139, ../sass/global.sass */
 .course--add--module:hover .add {
@@ -440,7 +449,7 @@ p {
 /* line 171, ../sass/global.sass */
 .course--header p {
   font-size: 18px;
-  color: #b1a5c4;
+  color: #9eb8ec;
   font-weight: 100;
 }
 /* line 176, ../sass/global.sass */
@@ -624,7 +633,7 @@ textarea:-ms-input-placeholder {
 }
 /* line 485, ../sass/global.sass */
 textarea:focus {
-  border-color: #7c689b;
+  border-color: #3b5998;
 }
 
 /* line 488, ../sass/global.sass */
@@ -657,7 +666,7 @@ input:-ms-input-placeholder {
 }
 /* line 500, ../sass/global.sass */
 input:focus {
-  border-color: #7c689b;
+  border-color: #3b5998;
 }
 
 /* line 29, ../sass/mixins.sass */
@@ -679,7 +688,7 @@ input:focus {
 
 /* line 507, ../sass/global.sass */
 .button {
-  background: #7c689b;
+  background: #3b5998;
   color: #fff;
   font-family: "Work Sans", sans-serif;
   font-size: 18px;
@@ -702,14 +711,14 @@ input:focus {
 }
 /* line 522, ../sass/global.sass */
 .button:not(.button-secondary):hover {
-  background: #63537d;
+  background: #577eca;
 }
 
 /* line 525, ../sass/global.sass */
 .button-secondary {
-  color: #7c689b;
+  color: #3b5998;
   background: none;
-  box-shadow: 0 0 0 2px #7c689b inset;
+  box-shadow: 0 0 0 2px #3b5998 inset;
   -webkit-transition: box-shadow 0.2s, color 0.2s;
   -moz-transition: box-shadow 0.2s, color 0.2s;
   -ms-transition: box-shadow 0.2s, color 0.2s;
@@ -718,8 +727,8 @@ input:focus {
 }
 /* line 530, ../sass/global.sass */
 .button-secondary:hover {
-  color: #63537d;
-  box-shadow: 0 0 0 2px #63537d inset;
+  color: #577eca;
+  box-shadow: 0 0 0 2px #577eca inset;
 }
 
 /* adds additional padding to the bottom of an element */
@@ -740,15 +749,62 @@ input:focus {
 
 /* styles the validation errors */
 .validation--errors--label {
-  color: #7c689b;
+  color: #3b5998;
   font-size: 28px;
 }
 .validation-errors ul {
-  color: #7c689b;
+  color: #3b5998;
   padding: 15px 0 40px 10px;
 }
 
 /* reduce bottom margin on the course description textarea element */
 .course--description textarea {
   margin-bottom: 20px;
+}
+
+/* Animation loading */
+.loaderFlex {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #4267b2; 
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-bottom: 100px;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Github link */
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
 }

@@ -9,12 +9,15 @@ class Courses extends Component {
     super(props);
     this.state = {
       courses: [],
+      // Loading animation before API call finishes
+      isLoading: false,
     }
   }
 
   /* When page first loads - Do this: */
   componentDidMount() {
 
+    this.setState({isLoading: true})
     /* Fetch the list of courses from the API using axios */    
     axios
       .get('https://rest-api-project-9.herokuapp.com/api/courses/')
@@ -31,15 +34,23 @@ class Courses extends Component {
         } else {
           this.props.history.push('/notfound');
         }
-      });
+      })
+      .finally( () => { this.setState({isLoading: false}) });
   }
 
   render() {
 
     const { courses } = this.state;
 
+    //  Loading API response  
+    const {isLoading} = this.state;
+
     return (
       <div className="bounds">
+        
+        {isLoading === true &&
+          <div className="loaderFlex"><div className="loader"></div></div>
+        }
 
         {/* Loop over every course and display the course title on each card */}
         {courses.map((course, index) => (
